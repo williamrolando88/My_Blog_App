@@ -1,2 +1,7 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container my-2 d-flex flex-column gap-4">
+  <%= render 'users/user_tag'%>
+  <%= render 'users/bio'%>
+  <%= render 'posts/post_preview'%>
+  <%= render 'posts/post_preview'%>
+  <button type="button" class="button">See all posts</button>
+</div>
