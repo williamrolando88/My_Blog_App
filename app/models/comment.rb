@@ -7,7 +7,7 @@ class Comment < ApplicationRecord
     post.update(comments_counter: post_comments)
   end
 
-  def get_author_name
+  def author_name
     author.name
   end
 end
