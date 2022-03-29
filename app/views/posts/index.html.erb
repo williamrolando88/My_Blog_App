@@ -1,12 +1,21 @@
 <div class="container my-2 d-flex flex-column gap-4">
-  <%= render 'users/user_tag'%>
+  <%= render 'layouts/shared/user_tag', user: @user%>
   <div class="container d-flex-column gap-2">
-    <%= render 'posts/post_preview'%>
-    <%= render 'posts/comments_short'%>
+  
+  <h2>All posts:</h2>
+  <br>
+
+  <% @posts.each do |p| %>
+    <%= render 'layouts/shared/post_preview', post: p %>
+    <% unless p.latest_comments.empty? %>
+      <div class='container border mt-1'>
+      <% p.latest_comments.each do |c| %>
+        <%= render 'layouts/shared/comment', comment: c %>
+      <% end %>
+      </div>
+      <br>
+    <% end %>
+  <% end %>
   </div>
-  <div class="container d-flex-column gap-2">
-    <%= render 'posts/post_preview'%>
-    <%= render 'posts/comments_short'%>
-  </div>
-  <button type="button" class="btn border">Pagination</button>
+  
 </div>

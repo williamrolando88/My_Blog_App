@@ -2,7 +2,7 @@
 <ul>
   <% @users.each do |u| %>
     <li>
-      <%= render 'users/user_tag', user: u %>
+      <%= render 'layouts/shared/user_tag', user: u %>
     </li>
   <% end %>
 </ul>

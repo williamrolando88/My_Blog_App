@@ -6,4 +6,8 @@ class Comment < ApplicationRecord
     post_comments = Comment.where(post_id: post).count
     post.update(comments_counter: post_comments)
   end
+
+  def get_author_name
+    author.name
+  end
 end
