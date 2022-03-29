@@ -3,7 +3,7 @@
   <%= image_tag "default_profile_picture.png", class:"img-thumbnail", size:"200", alt: "user", style:"width: 200px; height: 200px; object-fit:contain" %>
 
   <%# Container with user info %>
-  <%= link_to user_path(user), class:"container border p-2 d-flex" do %>
+  <%= link_to user_path(user), class:"container border p-2 d-flex text-decoration-none text-dark" do %>
     <div class="container border p-2 d-flex">
       <h3 class="flex-grow-1 align-self-center px-4">
         <%= user.name %>

@@ -1,18 +1,18 @@
-<div class="container border mt-2 p-2">
-  <h3>
-    <%= link_to user_post_path(post.author, post) do %>
+<%= link_to user_post_path(post.author, post), class:"text-decoration-none text-dark" do %>
+  <div class="container border mt-2 p-2">
+    <h3>
       <%= post.title %>
-    <% end %>
-  </h3>
-  <p>
-    <%= post.text %>
-  </p>
-  <div class="text-end d-flex gap-2 justify-content-end px-2">
+    </h3>
     <p>
-      Comments: <%= post.comments_counter %>
+      <%= post.text %>
     </p>
-    <p>
-      Likes: <%= post.likes_counter %>
-    </p>
+    <div class="text-end d-flex gap-2 justify-content-end px-2">
+      <p>
+        Comments: <%= post.comments_counter %>
+      </p>
+      <p>
+        Likes: <%= post.likes_counter %>
+      </p>
+    </div>
   </div>
-</div>
+<% end %>
