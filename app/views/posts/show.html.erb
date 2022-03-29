@@ -1,4 +1,17 @@
 <div class="container my-2 d-flex flex-column gap-4 p-2">
   <%= render 'posts/post'%>
-  <%= render 'posts/comments_long'%>
+
+  <%# Render latest comments for current post, if there are comments to show %>
+  <% unless @comments.empty? %>
+    <%# Renders all available comments %>
+    <div class='container border mt-1'>
+      <% @comments.each do |c| %>
+        <%# Call comment fragment to render latest comments %>
+        <%= render 'layouts/shared/comment', comment: c %>
+      <% end %>
+    </div>
+
+    <br>
+
+  <% end %>
 </div>
