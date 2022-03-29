@@ -1,7 +1,9 @@
 <div class="container my-2 d-flex flex-column gap-4">
-  <%= render 'users/user_tag'%>
-  <%= render 'users/bio'%>
-  <%= render 'posts/post_preview'%>
-  <%= render 'posts/post_preview'%>
+
+  <%= render 'users/user_tag', user: @user %>
+  <%= render 'users/bio', user: @user %>
+  <% @latest_posts.each do |p| %>
+    <%= render 'layouts/shared/post_preview', post: p %>
+  <% end %>
   <button type="button" class="btn border">See all posts</button>
 </div>
