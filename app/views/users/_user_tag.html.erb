@@ -1,7 +1,13 @@
 <div class="container border p-2 d-flex gap-2">
-  <img class="img-thumbnail" style="width: 200px; height: 200px; object-fit:cover" src="https://images.unsplash.com/photo-1647529012409-46c39666da4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80" alt="profile" width="200" heigth="200" />
-  <div class="container border p-2 d-flex">
-    <h3 class="flex-grow-1 align-self-center px-4">User name</h3>
-    <p class="align-self-end px-2">Number of posts: xx</p>
-  </div>
+  <%= image_tag("https://images.unsplash.com/photo-1647529012409-46c39666da4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80", class:"img-thumbnail", size:"200", alt: "user", style:"width: 200px; height: 200px; object-fit:cover" ) %>
+  <%= link_to(user_path(@user), class:"container border p-2 d-flex") do %>
+    <div class="container border p-2 d-flex">
+      <h3 class="flex-grow-1 align-self-center px-4">
+        <%= user.name %>
+      </h3>
+      <p class="align-self-end px-2">
+        Number of posts: <%= user.posts_counter %>
+      </p>
+    </div>
+  <% end %>
 </div>

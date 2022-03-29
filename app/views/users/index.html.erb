@@ -1,7 +1,8 @@
 <%# <h1>Here comes the users list</h1> %>
-<%= render 'users/user_tag'%>
-<%= render 'users/user_tag'%>
-<%= render 'users/user_tag'%>
-<%= render 'users/user_tag'%>
-<%= render 'users/user_tag'%>
-<%= render 'users/user_tag'%>
+<ul>
+  <% @users.each do |u| %>
+    <li>
+      <%= render 'users/user_tag', user: u %>
+    </li>
+  <% end %>
+</ul>
