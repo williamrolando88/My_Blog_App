@@ -7,4 +7,8 @@ class Post < ApplicationRecord
     author_posts = Post.where(author_id: author).count
     author.update(posts_counter: author_posts)
   end
+
+  def latest_comments
+    comments.order(created_at: :desc).limit(5)
+  end
 end
