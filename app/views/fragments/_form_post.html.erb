@@ -1,0 +1,16 @@
+<%# <%= form_with model: [@user, @user.posts.build] do |form| %> %>
+<%= form_with model: @post, url: user_posts_path() do |form| %>
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :text, style: "display: block" %>
+    <%= form.text_area :text %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
