@@ -1,6 +1,6 @@
 <div class="container my-2 d-flex flex-column gap-4">
   <%# Renders current user tag %>
-  <%= render 'layouts/shared/user_tag', user: @user%>
+  <%= render 'fragments/user_tag', user: @user%>
 
   <%# Holds all the post related to the current user %>
   <div class="container d-flex-column gap-2">
@@ -11,7 +11,7 @@
     <%# Renders all the existing posts for current user %>
     <% @posts.each do |p| %>
       <%# Call fragment to render each post %>
-      <%= render 'layouts/shared/post_preview', post: p %>
+      <%= render 'fragments/post_preview', post: p %>
 
       <%# Render latest comments for current post, if there are comments to show %>
       <% unless p.latest_comments.empty? %>
@@ -19,7 +19,7 @@
         <div class='container border mt-1'>
           <% p.latest_comments.each do |c| %>
             <%# Call comment fragment to render latest comments %>
-            <%= render 'layouts/shared/comment', comment: c %>
+            <%= render 'fragments/comment', comment: c %>
           <% end %>
         </div>
 
