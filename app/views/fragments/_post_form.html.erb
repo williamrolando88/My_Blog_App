@@ -1,4 +1,3 @@
-<%# <%= form_with model: [@user, @user.posts.build] do |form| %> %>
 <%= form_with model: @post, url: user_posts_path() do |form| %>
   <div>
     <%= form.label :title, style: "display: block" %>
