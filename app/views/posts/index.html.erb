@@ -1,6 +1,8 @@
 <div class="container my-2 d-flex flex-column gap-4">
   <%# Renders current user tag %>
-  <%= render 'fragments/user_tag', user: @user%>
+  <%= render 'fragments/user_tag', user: @user %>
+
+  <%= link_to "New Post", new_user_post_path() %>
 
   <%# Holds all the post related to the current user %>
   <div class="container d-flex-column gap-2">
