@@ -13,6 +13,5 @@ class CommentsController < ApplicationController
     else
       flash[:notice] = "Comment was not created."
     end
-
   end
 end
