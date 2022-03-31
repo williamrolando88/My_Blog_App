@@ -14,6 +14,6 @@
   <% end %>
 
   <%# Render form to add new comment %>
-  <%= link_to 'New Comment', new_user_post_comment_path(@user, @post) %>
+  <%= render 'fragments/comment_form' %>
   
 </div>
