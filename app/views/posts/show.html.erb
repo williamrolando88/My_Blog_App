@@ -10,8 +10,10 @@
         <%= render 'fragments/comment', comment: c %>
       <% end %>
     </div>
-
     <br>
-
   <% end %>
+
+  <%# Render form to add new comment %>
+  <%= link_to 'New Comment', new_user_post_comment_path(@user, @post) %>
+  
 </div>
