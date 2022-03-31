@@ -4,8 +4,14 @@
       <%= @post.title %>
     </h3>
     <div class="text-end d-flex gap-2 justify-content-end px-2">
-      <p>Comments: x</p>
-      <p>Likes: y</p>
+      <p>
+        Comments:
+        <%= @post.comments_counter %>
+      </p>
+      <p>
+        Likes:
+        <%= @post.likes_counter %>
+      </p>
     </div>
   </div>
   <p>
