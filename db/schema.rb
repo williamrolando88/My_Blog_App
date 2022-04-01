@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_25_002157) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", limit: 50, null: false
     t.string "photo"
     t.text "bio"
     t.integer "posts_counter"
