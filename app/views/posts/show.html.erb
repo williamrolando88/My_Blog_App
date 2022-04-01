@@ -5,7 +5,7 @@
   <% unless @comments.empty? %>
     <%# Renders all available comments %>
     <div class='container border mt-1'>
-      <% @comments.each do |c| %>
+      <% @comments.includes(:author).each do |c| %>
         <%# Call comment fragment to render latest comments %>
         <%= render 'fragments/comment', comment: c %>
       <% end %>
