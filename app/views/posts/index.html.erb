@@ -11,7 +11,7 @@
     <br>
 
     <%# Renders all the existing posts for current user %>
-    <% @posts.each do |p| %>
+    <% @posts.includes(:author).each do |p| %>
       <%# Call fragment to render each post %>
       <%= render 'fragments/post_preview', post: p %>
 
@@ -19,7 +19,7 @@
       <% unless p.latest_comments.empty? %>
         <%# Renders all available comments %>
         <div class='container border mt-1'>
-          <% p.latest_comments.each do |c| %>
+          <% p.latest_comments.includes(:author).each do |c| %>
             <%# Call comment fragment to render latest comments %>
             <%= render 'fragments/comment', comment: c %>
           <% end %>
