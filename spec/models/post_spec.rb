@@ -8,7 +8,8 @@ RSpec.describe Post, type: :model do
         text: 'This is a test post',
         comments_counter: 0,
         likes_counter: 0,
-        author_id: 3)
+        author_id: 3
+      )
     end
 
     it 'creates a new record?' do
@@ -27,7 +28,8 @@ RSpec.describe Post, type: :model do
         title: nil,
         text: 'This is a test post',
         comments_counter: nil,
-        likes_counter: nil)
+        likes_counter: nil
+      )
     end
 
     it 'is invalid without a title' do
