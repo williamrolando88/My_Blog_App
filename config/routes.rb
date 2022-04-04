@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "users#index"
   devise_for :users
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :create, :new] do
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root "users#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
