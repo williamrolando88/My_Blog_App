@@ -15,8 +15,22 @@
   </head>
 
   <body>
+    <br>
     <div class="container">
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-info">
+          <%= msg %>
+        </div>
+      <% end %>
+      
       <%= yield %>
+
+      <% if user_signed_in? %>
+        <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class:"btn btn-danger btn-block mt-2" %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, class:"btn btn-primary btn-block mt-2" %>
+      <% end %>
+
     </div>
     <script 
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
