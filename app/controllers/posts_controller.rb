@@ -31,9 +31,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to user_posts_path(@user)
+    redirect_to root_path, status: :see_other
   end
 end
