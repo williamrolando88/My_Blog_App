@@ -3,7 +3,9 @@
   <%= render 'fragments/post'%>
 
   <%# Button to delete post %>
-  <%= button_to 'Delete Post', user_post_path(@user, @post), :method => :delete %>
+  <% if can? :destroy, @post %>
+    <%= button_to 'Delete Post', user_post_path(@user, @post), :method => :delete %>
+  <% end %>
 
   <%# Render latest comments for current post, if there are comments to show %>
   <% unless @comments.empty? %>
@@ -14,7 +16,9 @@
         <%= render 'fragments/comment', comment: c %>
 
         <%# Button to delete comment %>
-        <%= button_to 'Delete comment', user_post_comment_path(@user, @post, c), :method => :delete %>
+        <% if can? :destroy, c %>
+          <%= button_to 'Delete comment', user_post_comment_path(@user, @post, c), :method => :delete %>
+        <% end %>
       <% end %>
     </div>
     <br>
