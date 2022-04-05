@@ -1,6 +1,8 @@
 <div class="container my-2 d-flex flex-column gap-4 p-2">
   <%= render 'fragments/post'%>
 
+  <%= link_to 'Delete', user_post_path(@user, @post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
   <%# Render latest comments for current post, if there are comments to show %>
   <% unless @comments.empty? %>
     <%# Renders all available comments %>
