@@ -1,15 +1,19 @@
 <div class="container my-2 d-flex flex-column gap-4 p-2">
+  <%# Render post fragment with post data %>
   <%= render 'fragments/post'%>
 
+  <%# Button to delete post %>
   <%= button_to 'Delete Post', user_post_path(@user, @post), :method => :delete %>
 
   <%# Render latest comments for current post, if there are comments to show %>
   <% unless @comments.empty? %>
     <%# Renders all available comments %>
-    <div class='container border mt-1'>
+    <div class='container border mt-1 d-flex justify-content-between px-4 pt-2'>
       <% @comments.includes(:author).each do |c| %>
         <%# Call comment fragment to render latest comments %>
         <%= render 'fragments/comment', comment: c %>
+
+        <%# Button to delete comment %>
         <%= button_to 'Delete comment', user_post_comment_path(@user, @post, c), :method => :delete %>
       <% end %>
     </div>
