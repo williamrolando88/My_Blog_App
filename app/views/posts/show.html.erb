@@ -10,15 +10,11 @@
   <%# Render latest comments for current post, if there are comments to show %>
   <% unless @comments.empty? %>
     <%# Renders all available comments %>
-    <div class='container border mt-1 d-flex justify-content-between px-4 pt-2'>
+    <div class='container border mt-1 px-4 pt-2'>
       <% @comments.includes(:author).each do |c| %>
         <%# Call comment fragment to render latest comments %>
         <%= render 'fragments/comment', comment: c %>
-
-        <%# Button to delete comment %>
-        <% if can? :destroy, c %>
-          <%= button_to 'Delete comment', user_post_comment_path(@user, @post, c), :method => :delete %>
-        <% end %>
+        <hr>
       <% end %>
     </div>
     <br>
