@@ -1,1 +1,3 @@
-<%= button_to 'Add like', user_post_likes_path(@user, @post), action: 'create'  %>
+<% if user_signed_in? %>
+  <%= button_to 'Add like', user_post_likes_path(@user, @post), action: 'create'  %>
+<% end %>

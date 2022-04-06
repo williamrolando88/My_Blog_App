@@ -1,12 +1,15 @@
-<h4>New comment</h4>
+<% if user_signed_in? %>
+  <h4>New comment</h4>
 
-<%= form_with model: [@user, @post, @post.comments.build] do |form| %>
-  <div>
-    <%= form.label :text, style: "display: block" %>
-    <%= form.text_area :text %>
-  </div>
+  <%# New post form %>
+  <%= form_with model: [@user, @post, @post.comments.build] do |form| %>
+    <div>
+      <%= form.label :text, style: "display: block" %>
+      <%= form.text_area :text %>
+    </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
 <% end %>

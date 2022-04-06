@@ -1,0 +1,7 @@
+<% unless ['sessions', 'registrations', 'passwords', 'confirmations', 'unlocks'].include?(controller_name) %>
+  <% if user_signed_in? %>
+    <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class:"btn btn-danger btn-block mt-2" %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path, class:"btn btn-primary btn-block mt-2" %>
+  <% end %>
+<% end %>

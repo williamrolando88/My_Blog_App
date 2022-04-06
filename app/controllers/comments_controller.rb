@@ -14,4 +14,10 @@ class CommentsController < ApplicationController
       flash[:notice] = "Comment was not created."
     end
   end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to user_post_path(params[:user_id], params[:post_id]), status: :see_other
+  end
 end
