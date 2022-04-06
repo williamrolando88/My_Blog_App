@@ -78,3 +78,5 @@ end
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.17'
 gem "devise", "~> 4.8"
+
+gem "cancancan", "~> 3.3"
