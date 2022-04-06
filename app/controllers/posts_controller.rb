@@ -23,6 +23,7 @@ class PostsController < ApplicationController
     @post.likes_counter = 0
 
     if @post.save
+      @post.update_post_counter
       redirect_to user_posts_path(@user)
     else
       flash[:notice] = "Post was not created."
