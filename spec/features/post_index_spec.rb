@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Blog App on user#show' do
-  describe 'renders a user details' do
+feature 'Blog App on post#index' do
+  describe 'renders a user posts' do
     background do
       @user = User.new(
         name: 'Admin',
