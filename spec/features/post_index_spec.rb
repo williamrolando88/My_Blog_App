@@ -21,11 +21,15 @@ feature 'Blog App on user#show' do
       )
       @post1.update_post_counter
 
-      visit user_path(@user)
+      @comments1 = Comment.create(
+        text: 'Comment 1 text',
+        author_id: @user.id,
+        post_id: @post1.id
+      )
+      @comments1.comments_counter
+
+      visit user_posts_path(@user)
     end
-
-
-    
 
     # I can see the user's profile picture.
     scenario 'shows profile picture' do
@@ -53,26 +57,24 @@ feature 'Blog App on user#show' do
     end
 
     # I can see the first comments on a post.
-    # I can see how many comments a post has.
-    # I can see how many likes a post has.
-    # I can see a section for pagination if there are more posts than fit on the view.
-    # When I click on a post, it redirects me to that post's show page.
-
-    # I can see a button that lets me view all of a user's posts.
-    scenario 'shows button to see all posts' do
-      expect(page).to have_content('See all posts')
+    scenario 'shows first comment' do
+      expect(page).to have_content('Comment 1 text')
     end
 
-    # When I click a user's post, it redirects me to that post's show page.
+    # I can see how many comments a post has.
+    scenario 'shows number of comments' do
+      expect(page).to have_content('Comments: 1')
+    end
+
+    # I can see how many likes a post has.
+    scenario 'shows number of likes' do
+      expect(page).to have_content('Likes: 0')
+    end
+
+    # When I click on a post, it redirects me to that post's show page.
     scenario 'redirects to post show page' do
       click_link 'Post 1'
       expect(page).to have_current_path(user_post_path(@user, @post1))
-    end
-
-    # When I click to see all posts, it redirects me to the user's post's index page.
-    scenario 'redirects to post index page' do
-      click_button 'See all posts'
-      expect(page).to have_current_path(user_posts_path(@user))
     end
   end
 end
