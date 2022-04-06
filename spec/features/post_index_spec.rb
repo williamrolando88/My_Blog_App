@@ -20,21 +20,12 @@ feature 'Blog App on user#show' do
         author_id: @user.id
       )
       @post1.update_post_counter
-      @post2 = Post.create(
-        title: 'Post 2',
-        text: 'Post 2 text',
-        author_id: @user.id
-      )
-      @post2.update_post_counter
-      @post3 = Post.create(
-        title: 'Post 3',
-        text: 'Post 3 text',
-        author_id: @user.id
-      )
-      @post3.update_post_counter
 
       visit user_path(@user)
     end
+
+
+    
 
     # I can see the user's profile picture.
     scenario 'shows profile picture' do
@@ -48,20 +39,24 @@ feature 'Blog App on user#show' do
 
     # I can see the number of posts the user has written.
     scenario 'shows number of posts' do
-      expect(page).to have_content('Number of posts: 3')
+      expect(page).to have_content('Number of posts: 1')
     end
 
-    # I can see the user's bio.
-    scenario 'shows user bio' do
-      expect(page).to have_content('I am a bio')
-    end
-
-    # I can see the user's first 3 posts.
-    scenario 'shows first 3 post' do
+    # I can see a post's title.
+    scenario 'shows post title' do
       expect(page).to have_content('Post 1')
-      expect(page).to have_content('Post 2')
-      expect(page).to have_content('Post 3')
     end
+    
+    # I can see some of the post's body.
+    scenario 'shows post text' do
+      expect(page).to have_content('Post 1 text')
+    end
+
+    # I can see the first comments on a post.
+    # I can see how many comments a post has.
+    # I can see how many likes a post has.
+    # I can see a section for pagination if there are more posts than fit on the view.
+    # When I click on a post, it redirects me to that post's show page.
 
     # I can see a button that lets me view all of a user's posts.
     scenario 'shows button to see all posts' do
