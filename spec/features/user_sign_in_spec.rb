@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Blog App' do
+RSpec.describe 'Log in', type: :feature do
   describe 'renders login page when' do
     # I can see the username and password inputs and the "Submit" button.
     scenario 'visiting new_user_session_path' do
