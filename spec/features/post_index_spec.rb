@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Blog App on post#index' do
+RSpec.describe 'Post Index', type: :feature do
   describe 'renders a user posts' do
     background do
       @user = User.new(
