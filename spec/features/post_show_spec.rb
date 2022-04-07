@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Blog App on root path' do
+feature 'Blog App on post#show' do
   describe 'render a single post details' do
     background do
       @user = User.new(
@@ -58,10 +58,19 @@ feature 'Blog App on root path' do
     end
 
     # I can see the post body.
+    scenario 'shows post text' do
+      expect(page).to have_content('Post 1 text')
+    end
 
     # I can see the username of each commentor.
+    scenario 'shows comment author' do
+      expect(page).to have_content('Admin:')
+    end
 
     # I can see the comment each commentor left.
+    scenario 'shows comment text' do
+      expect(page).to have_content('Comment 1 text')
+    end
 
   end
 end
