@@ -13,7 +13,15 @@
     <div class='container border mt-1 px-4 pt-2'>
       <% @comments.includes(:author).each do |c| %>
         <%# Call comment fragment to render latest comments %>
-        <%= render 'fragments/comment', comment: c %>
+        
+        <div class='d-flex justify-content-between'>
+          <%= render 'fragments/comment', comment: c %>
+
+          <%# Button to delete comment %>
+          <% if can? :destroy, c %>
+            <%= button_to 'Delete comment', user_post_comment_path(@user, @post, c), :method => :delete %>
+          <% end %>
+        </div>
         <hr>
       <% end %>
     </div>

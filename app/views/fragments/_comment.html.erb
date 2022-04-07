@@ -1,15 +1,8 @@
-<div class='d-flex justify-content-between'>
-  <div class='d-flex gap-2'>
-    <p>
-      <%= comment.author_name %>:
-    </p>
-    <p>
-      <%= comment.text %>
-    </p>
-  </div>
-  
-  <%# Button to delete comment %>
-  <% if can? :destroy, comment %>
-    <%= button_to 'Delete comment', user_post_comment_path(@user, @post, comment), :method => :delete %>
-  <% end %>
+<div class='d-flex gap-2'>
+  <p>
+    <%= comment.author_name %>:
+  </p>
+  <p>
+    <%= comment.text %>
+  </p>
 </div>
