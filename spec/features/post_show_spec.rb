@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Blog App on post#show' do
+RSpec.describe 'Posy Show', type: :feature do
   describe 'render a single post details' do
     background do
       @user = User.new(
