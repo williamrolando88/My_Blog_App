@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Posy Show', type: :feature do
   describe 'render a single post details' do
-    background do
+    before(:each) do
       @user = User.new(
         name: 'Admin',
         email: 'user3@gmail.com',

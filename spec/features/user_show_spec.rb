@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'User Show', type: :feature do
   describe 'renders a user details' do
-    background do
+    before(:each) do
       @user = User.new(
         name: 'Admin',
         email: 'user2@gmail.com',

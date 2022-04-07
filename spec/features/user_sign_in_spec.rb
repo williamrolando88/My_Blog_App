@@ -13,7 +13,7 @@ RSpec.describe 'Log in', type: :feature do
   end
   
   describe 'when user attemps to login page with' do
-    background do
+    before(:each) do
       user = User.new(
         name: 'Admin',
         email: 'example@gmail.com',

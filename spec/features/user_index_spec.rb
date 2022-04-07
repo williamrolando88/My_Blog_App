@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'User Index', type: :feature do
   describe 'renders existing users' do
-    background do
+    before(:each) do
       @user = User.new(
         name: 'Admin',
         email: 'user1@gmail.com',
