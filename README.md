@@ -19,8 +19,8 @@ This is a blog app powered by ruby on rails
 1. Clone the project using git-bash or Githup Desktop.
 2. Open the project folder with VSCode or any Editor.
 3. Open terminal and navigate to the project folder.
-4. Type `irb`.
-5. Copy the code from files and run it.
+4. Set up database for test enviroment with `rails db:migrate RAILS_ENV=test`
+5. Run test with `rspec spec`
 
 ## Authors
 
