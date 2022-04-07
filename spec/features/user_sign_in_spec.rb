@@ -9,9 +9,8 @@ RSpec.describe 'Log in', type: :feature do
       expect(page).to have_content('Password')
       expect(page).to have_content('Log in')
     end
-    
   end
-  
+
   describe 'when user attemps to login page with' do
     before(:each) do
       user = User.new(
@@ -24,15 +23,16 @@ RSpec.describe 'Log in', type: :feature do
       user.skip_confirmation!
       user.save!
     end
-    
+
     # When I click the submit button without filling in the username and the password, I get a detailed error.
     scenario 'an empty form, show error message' do
       visit new_user_session_path
       click_button 'Log in'
       expect(page).to have_content('Invalid Email or password.')
     end
-    
-    # When I click the submit button after filling in the username and the password with incorrect data, I get a detailed error.
+
+    # When I click the submit button after filling in the username and the password with incorrect data, I get a
+    # detailed error.
     scenario 'a form with wrong credentials show error message' do
       visit new_user_session_path
       within('#new_user') do
@@ -42,8 +42,9 @@ RSpec.describe 'Log in', type: :feature do
       click_button 'Log in'
       expect(page).to have_content('Invalid Email or password.')
     end
-    
-    # When I click the submit button after filling in the username and the password with correct data, I am redirected to the root page.
+
+    # When I click the submit button after filling in the username and the password with correct data, I am redirected
+    # to the root page.
     scenario 'a form with rigth credentials does not show errors and redirect to root path' do
       visit new_user_session_path
       within('#new_user') do

@@ -50,7 +50,7 @@ RSpec.describe 'Post Index', type: :feature do
     scenario 'shows post title' do
       expect(page).to have_content('Post 1')
     end
-    
+
     # I can see some of the post's body.
     scenario 'shows post text' do
       expect(page).to have_content('Post 1 text')
@@ -78,4 +78,3 @@ RSpec.describe 'Post Index', type: :feature do
     end
   end
 end
-

@@ -71,6 +71,5 @@ RSpec.describe 'Posy Show', type: :feature do
     scenario 'shows comment text' do
       expect(page).to have_content('Comment 1 text')
     end
-
   end
 end
