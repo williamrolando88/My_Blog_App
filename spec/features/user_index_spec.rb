@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Blog App on root path' do
+RSpec.describe 'User Index', type: :feature do
   describe 'renders existing users' do
     background do
       @user = User.new(
