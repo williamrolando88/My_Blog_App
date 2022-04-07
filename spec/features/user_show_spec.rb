@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Blog App on user#show' do
+RSpec.describe 'User Show', type: :feature do
   describe 'renders a user details' do
     background do
       @user = User.new(
