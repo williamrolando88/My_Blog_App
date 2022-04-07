@@ -3,8 +3,7 @@ class Comment < ApplicationRecord
   belongs_to :post, class_name: 'Post', foreign_key: :post_id
 
   def comments_counter
-    post_comments = Comment.where(post_id: post).count
-    post.update(comments_counter: post_comments)
+    post.increment!(:comments_counter)
   end
 
   def author_name
