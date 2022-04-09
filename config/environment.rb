@@ -9,10 +9,10 @@ ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.smtp_settings = {
   address: 'smtp.gmail.com',
   domain: 'gmail.com',
-  port: 465, # (or 587 if 25 is blocked)
+  port: 465,
   authentication: 'plain',
   :ssl => true,
   :tsl => true,
   enable_starttls_auto: true,
-  user_name: 'ror.development.wr88@gmail.com',
-  password: 'QaZwSx123456'}
+  user_name: Rails.application.credentials.email[:user_name],
+  password: Rails.application.credentials.email[:password]}
